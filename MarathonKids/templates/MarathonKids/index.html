@@ -5,11 +5,14 @@
 	</head>
 
 	<body>
-		<h1 style="color:blue;">
-		Marathon Kids
+		<h1 style="color:blue; font-family:impact;">Marathon Kids</h1>
+		<ul>
+		{%for university in universities%}
+			<li>{{university.name}}</li>
 
-		</h1>
-	
+		{%endfor%}
+		</ul>
+		
 	</body>
 
 </html>
