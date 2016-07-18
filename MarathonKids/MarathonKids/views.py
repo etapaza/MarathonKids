@@ -6,5 +6,5 @@ from Universities.models import University
 def index(request):
 	print("trying to render")
 	universities = University.objects.all()
-	return render(request, 'MarathonKids\\index.html')
+	return render(request, 'MarathonKids\\index.html', {"universities":universities})
 	
