@@ -4,13 +4,17 @@
 	<head>
 		<title>Marathon Kids</title>
 		<style type="text/css">
-			#wrapper {
+			html body {
+				margin: 0;
+				padding: 0;
+			}
+			.text-center {
 				text-align:center;
 			}
-			#wrapper iframe {
+			.inline {
 				display:inline-block;
 			}
-			.center {
+			.img-center {
 				display: block;
 				margin: 0 auto;
 			}
@@ -18,9 +22,9 @@
 	</head>
 
 	<body>
-		<img src="{% static "images/mk_logo.jpg" %}" class="center">
-		<div id="wrapper">		
-			<iframe align="absmiddle" width="560" height="315" src="https://www.youtube.com/embed/BmOlzRQTabA" frameborder="1" allowfullscreen></iframe>
+		<img src="{% static "images/mk_logo.jpg" %}" class="img-center">
+		<div class="text-center" style="background-color:#000">
+			<iframe class="inline" width="560" height="315" src="https://www.youtube.com/embed/BmOlzRQTabA" frameborder="1" allowfullscreen></iframe>
 		</div>
 		<ul>
 		{%for university in universities%}
