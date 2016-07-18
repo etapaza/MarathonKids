@@ -7,6 +7,7 @@
 			html body {
 				margin: 0;
 				padding: 0;
+				font-family: "Polaris", Helvetica, arial, sans-serif;
 			}
 			.text-center {
 				text-align:center;
@@ -22,16 +23,21 @@
 	</head>
 
 	<body>
-		<img src="{% static "images/mk_logo.jpg" %}" class="img-center">
-		<div class="text-center" style="background-color:#000">
-			<iframe class="inline" width="560" height="315" src="https://www.youtube.com/embed/BmOlzRQTabA" frameborder="1" allowfullscreen></iframe>
+		<img style="margin-top:5px;" src="{% static "images/mk_logo.jpg" %}" class="img-center">
+		<div class="text-center" style="background-color:#000; margin-top:5px; margin-bottom:5px;">
+			<iframe class="inline" width="560" height="315" src="https://www.youtube.com/embed/BmOlzRQTabA" frameborder="0" allowfullscreen></iframe>
 		</div>
-		<ul>
-		{%for university in universities%}
-			<li>{{university.name}}</li>
+		<div>
+			<table align="center" style="margin-top:5px; margin-bottom:5px;">
+			{%for university in universities%}
+				<tr>
+					<td style="text-align:left; font-size:200%">{{university.name}}</td>
+					<td style="text-align:right; font-size:200%;">{{university.password}}</td>
+				</tr>
 
-		{%endfor%}
-		</ul>
+			{%endfor%}
+			</table>
+		</div>
 	</body>
 
 </html>
