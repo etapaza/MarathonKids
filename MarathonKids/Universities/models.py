@@ -11,6 +11,8 @@ class Counter:
 # Create your models here.
 class University(models.Model):
 	name = models.CharField(max_length=100)
-	points = models.PositiveIntegerField()
 	password = models.CharField(max_length=25)
+	domain = models.CharField(max_length=500, default="ncaa.org")
+	points = models.PositiveIntegerField()
+	
 
