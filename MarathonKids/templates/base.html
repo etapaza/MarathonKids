@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Marathon Kids</title>
+		<style type="text/css">
+			html body {
+				margin: 0;
+				padding: 0;
+				font-size: 12pt;
+				font-family: "Cambria", Helvetica, arial, sans-serif;
+				color: #002060;
+			}
+			.text-center {
+				text-align:center;
+			}
+			.inline {
+				display:inline-block;
+			}
+			.img-center {
+				display: block;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<img style="margin-top:5px;" src="{% static "images/mk_logo.jpg" %}" class="img-center">
+
+		{% block content %}
+		{% endblock content %}
+
+		<div class="text-center">
+			<h5>Created by: Elaine Apaza & Luke Hurst</h5>
+			<h5><a href="https://github.com/etapaza/MarathonKids">Git Repo</a></h5>
+		</div>
+	</body>
+
+</html>
