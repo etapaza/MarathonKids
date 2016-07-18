@@ -3,11 +3,22 @@
 <html>
 	<head>
 		<title>Marathon Kids</title>
+		<style>
+			.img-center {
+				display: block;
+				margin: 0 auto;
+			}
+			.text-center {
+				text-align: center;
+			}
+		</style>
 	</head>
 
 	<body>
 		<img style="margin-top:5px;" src="{% static "images/mk_logo.jpg" %}" class="img-center">
-		{{university.name}}
+		<h1>{{university.name}}</h1>
+		<h3>Number of Kids Enrolled: {{university.points}}</h3>
+		<h3>Total Miles Ran: {{university.miles}}</h3>
 
 		<div class="text-center">
 			<h5>Created by: Elaine Apaza & Luke Hurst</h5>
