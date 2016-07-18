@@ -2,10 +2,15 @@
 <html>
 	<head>
 		<title>Marathon Kids</title>
+		<style type="text/css">#wrapper {text-align:center;}
+		#wrapper iframe {display:inline-block;}</style>
 	</head>
 
 	<body>
-		<h1 style="color:blue; font-family:impact;">Marathon Kids</h1>
+		<h1 align="center" style="color:blue; font-family:impact; ">Marathon Kids</h1>
+		<div id="wrapper">		
+			<iframe align="absmiddle" width="560" height="315" src="https://www.youtube.com/embed/BmOlzRQTabA" frameborder="1" allowfullscreen></iframe>
+		</div>
 		<ul>
 		{%for university in universities%}
 			<li>{{university.name}}</li>
