@@ -17,5 +17,5 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.profile),
+    url(r'^(?P<universityid>\d+)$', views.profile, name='university-profile'),
 ]
