@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login
 from Universities.models import University
+from django.contrib.auth import views as auth_views
 
 # Create your views here.
 def profile(request, universityid):
@@ -13,7 +13,7 @@ def login(request):
 	if request.user.is_authenticated():
 		return redirect('edit')
 	else:
-		pass
-@login_required
+		return auth_views.login(request)
+
 def edit(request):
 	return HttpResponse('Edit page')

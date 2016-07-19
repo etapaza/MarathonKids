@@ -18,6 +18,5 @@ from . import views
 
 urlpatterns = [
     url(r'^(?P<universityid>\d+)$', views.profile, name='university-profile'),
-    url(r'^login/$', 'django.contrib.auth.views.login', name='university-login'),
-    url(r'^submit/$', views.login, name='login')
+    url(r'^login/$', views.login, name='university-login')
 ]
