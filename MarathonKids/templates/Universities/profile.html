@@ -1,7 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h1>{{university.name}}</h1>
-	<h3>Number of Kids Enrolled: {{university.points}}</h3>
-	<h3>Total Miles Ran: {{university.miles}}</h3>
+	<div class="text-center">
+		<h1 class="img-center">{{university.name}}</h1>
+	</div>
+	<table align="center" style="font-size:200%">
+		<tr>
+			<td>Kids</td>
+			<td>{{university.kids_enrolled}}</td>
+			<td>Rank</td>
+		</tr>
+		<tr>
+			<td>Miles</td>
+			<td>{{university.miles_ran}}</td>
+			<td>Rank</td>
+		</tr>
+	</table>
+	<div class="text-center">
+		<a href="#">Login to edit</a>
+	</div>
 {% endblock content %}
