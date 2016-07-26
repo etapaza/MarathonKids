@@ -10,9 +10,13 @@ def profile(request, universityid):
 	return render(request, 'Universities\\profile.html', {'university': university})
 
 def login(request):
+	print('Received', request)
+	print('User', request.user)
 	if request.user.is_authenticated():
+		print('Success!')
 		return redirect('edit')
 	else:
+		print('Redirecting to auth_views')
 		return auth_views.login(request)
 
 def edit(request):
