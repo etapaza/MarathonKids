@@ -8,12 +8,18 @@
 		<tr>
 			<td>Kids:</td>
 			<td>{{university.kids_enrolled}}</td>
-			<!-- <td>Rank</td>
- -->		</tr>
+			<!-- <td>Rank</td> -->
+			{% if user == university %}
+			<td>Add</td>
+			{% endif %}
+		</tr>
 		<tr>
 			<td>Miles:</td>
 			<td>{{university.miles_ran}}</td>
 			<!-- <td>Rank</td> -->
+			{% if user == university %}
+			<td>Add</td>
+			{% endif %}
 		</tr>
 	</table>
 	<div class="text-center">
