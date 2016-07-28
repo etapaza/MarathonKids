@@ -18,7 +18,7 @@ def login(request):
 	return redirect('MarathonKids-home')
 
 def logout(request):
-	print('LOL not logging out')
+	auth.logout(request)
 	return redirect('MarathonKids-home')
 
 def edit(request):
