@@ -1,8 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.contrib.auth.decorators import login_required
 from Universities.models import University
-from django.contrib.auth import views as auth_views
+from django.contrib import auth
 
 # Create your views here.
 def profile(request, universityid):
@@ -11,13 +10,16 @@ def profile(request, universityid):
 
 def login(request):
 	print('Received', request)
-	print('User', request.user)
-	if request.user.is_authenticated():
-		print('Success!')
-		return redirect('edit')
-	else:
-		print('Redirecting to auth_views')
-		return auth_views.login(request)
+	print('Received', request.POST)
+	username = request.POST['username']
+	password = request.POST['password']
+	user = auth.authenticate(username=username, password=password)
+	auth.login(request, user)
+	return redirect('MarathonKids-home')
+
+def logout(request):
+	print('LOL not logging out')
+	return redirect('MarathonKids-home')
 
 def edit(request):
 	return HttpResponse('Edit page')

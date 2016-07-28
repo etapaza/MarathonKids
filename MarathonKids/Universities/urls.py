@@ -18,5 +18,6 @@ from . import views
 
 urlpatterns = [
     url(r'^(?P<universityid>\d+)$', views.profile, name='university-profile'),
-    url(r'^login/$', views.login, name='university-login')
+    url(r'^login/$', views.login, name='university-login'),
+    url(r'^logout/$', views.logout, name='university-logout')
 ]
