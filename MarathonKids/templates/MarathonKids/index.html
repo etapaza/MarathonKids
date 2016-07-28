@@ -5,15 +5,15 @@
 		<iframe class="inline" width="560" height="315" src="https://www.youtube.com/embed/BmOlzRQTabA" frameborder="0" allowfullscreen></iframe>
 	</div>
 	<div class="text-center">
-		<h1 class=".nsg-font-family--platform" style="font-size:300%"><b>UNIVERSITY LEADERBOARD</b></h1>
+		<h1 class=".nsg-font-family--platform" style="font-size:300%;"><b>UNIVERSITY LEADERBOARD</b></h1>
 
 		<span style="font-size:300%;content: \f107"></span>
 
 	</div>
 	<div>
-		<table cellpadding="10" align="center" style="margin-top:5px; margin-bottom:5px;">
+		<table class="tablestyle tablestyletwo tablestylethree" cellpadding="100" align="center" style="margin-top:5px; margin-bottom:5px;">
 		{%for university in universities%}
-			<tr>
+			<tr style="padding:100px;">
 				<td style="text-align:left; font-size:200%">{{counter.next}}</td>
 				<td><img height="50px" width="50px" src="https://logo.clearbit.com/{{university.username}}"></td>
 				<td style="text-align:left; font-size:200%"><a href={% url 'university-profile' university.id %}>{{university.name}}</a></td>

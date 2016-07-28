@@ -4,15 +4,32 @@
    Author's custom styles
    ========================================================================== */
 
+td{
+	padding:10px;
+}
 
 
+.tablestyle tr:first-child td{
+	background-color: #FFD700;
+
+}
+
+.tablestyletwo tr:nth-child(2) td{
+	background-color: #C0C0C0;
+}
+
+.tablestylethree tr:nth-child(3) td{
+	background-color: #CD7F32;
+}
+
+.tablepage tr td{
+	font-weight: bolder;
+}
 
 
-
-
-
-
-
+h3{
+	font-size: 30
+}
 
 
 

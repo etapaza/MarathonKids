@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<div class="text-center" style="padding-top:5px; padding-bottom:5px" >
-		<h1 class="img-center">{{university.name}}</h1>
+	<div class="text-center" style="padding-top:100px; padding-bottom:20px" >
+		<h1 class="img-center" style="font-size:300%;"><b>{{university.name}}</b></h1>
 	</div>
-	<table align="center" style="font-size:200%; padding-bottom:5px">
+	<table class="tablepage" align="center" style="font-size:200%; padding-bottom:5px">
 		<tr>
-			<td>Kids</td>
+			<td>Kids:</td>
 			<td>{{university.kids_enrolled}}</td>
-			<td>Rank</td>
-		</tr>
+			<!-- <td>Rank</td>
+ -->		</tr>
 		<tr>
-			<td>Miles</td>
+			<td>Miles:</td>
 			<td>{{university.miles_ran}}</td>
-			<td>Rank</td>
+			<!-- <td>Rank</td> -->
 		</tr>
 	</table>
 	<div class="text-center">
