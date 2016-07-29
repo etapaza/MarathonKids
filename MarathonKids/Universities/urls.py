@@ -19,6 +19,7 @@ from . import views
 urlpatterns = [
     url(r'^(?P<universityid>\d+)$', views.profile, name='university-profile'),
     url(r'^create/$', views.create, name='university-create'),
+    url(r'^update/$', views.update, name='university-update'),
     url(r'^login/$', views.login, name='university-login'),
     url(r'^logout/$', views.logout, name='university-logout')
 ]

@@ -106,5 +106,13 @@ def logout(request):
 	auth.logout(request)
 	return redirect(request.META['HTTP_REFERER'])
 
-def edit(request):
-	return HttpResponse('Edit page')
+def update(request):
+	print('Updating:', request.user)
+	print(request.POST)
+	to_update = University.objects.get(id=request.user.id)
+	if request.POST.get('kids-value'):
+		to_update.kids_enrolled += int(request.POST['kids-value'])
+	else:
+		to_update.miles_ran += int(request.POST['miles-value'])
+	to_update.save()
+	return profile(request, request.user.id)
