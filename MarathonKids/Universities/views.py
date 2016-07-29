@@ -100,11 +100,11 @@ def login(request):
 	password = request.POST['password']
 	user = auth.authenticate(username=username, password=password)
 	auth.login(request, user)
-	return redirect('MarathonKids-home')
+	return redirect(request.META['HTTP_REFERER'])
 
 def logout(request):
 	auth.logout(request)
-	return redirect('MarathonKids-home')
+	return redirect(request.META['HTTP_REFERER'])
 
 def edit(request):
 	return HttpResponse('Edit page')
