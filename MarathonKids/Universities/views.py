@@ -4,10 +4,15 @@ from Universities.models import University
 from django.contrib import auth
 from datetime import datetime
 
+def toOrdinalNum(n):
+	return str(n) + {1: 'st', 2: 'nd', 3: 'rd'}.get(4 if 10 <= n % 100 < 20 else n % 10, "th")
+
+
 # Create your views here.
 def profile(request, universityid):
 	university = University.objects.get(id=universityid)
-	return render(request, 'Universities\\profile.html', {'university': university})
+	rank = toOrdinalNum(University.objects.filter(points__gt = university.points).count() + 1)
+	return render(request, 'Universities\\profile.html', {'university': university, 'rank': rank[0:1], 'ord': rank[1:]})
 
 def create(request):
 	University.objects.all().delete()

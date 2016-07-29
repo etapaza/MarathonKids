@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<div class="text-center" style="padding-top:100px; padding-bottom:20px" >
-		<h1 class="img-center" style="font-size:300%;"><b>{{university.name}}</b></h1>
+	<div class="text-center" style="margin-top:50px;padding-top:20px; padding-bottom:20px" >
+		<h1 class="img-center" style="font-size:300%;"><img style="height:2em;" src="//logo.clearbit.com/{{university.username}}"> <span style="vertical-align:middle"><b>{{university.name}} - {{rank}}<sup>{{ord}}</sup></b></span></h1>
+	<hr>
 	</div>
 	<table class="tablepage" align="center" style="font-size:200%; padding-bottom:5px">
 		<tr>
