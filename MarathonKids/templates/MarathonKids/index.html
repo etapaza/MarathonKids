@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<div class="text-center" style="background-color:#000; margin-top:5px; margin-bottom:5px; padding-top:10px; padding-bottom:7px;">
+	<div class="text-center" style="background-color:#000;margin-bottom:5px; padding-top:10px; padding-bottom:7px;">
 		<iframe class="inline" width="560" height="315" src="https://www.youtube.com/embed/BmOlzRQTabA" frameborder="0" allowfullscreen></iframe>
 	</div>
 	<div class="text-center">
@@ -17,7 +17,7 @@
 				<td style="text-align:left; font-size:200%">{{counter.next}}</td>
 				<td><img height="50px" width="50px" src="https://logo.clearbit.com/{{university.username}}"></td>
 				<td style="text-align:left; font-size:200%"><a href={% url 'university-profile' university.id %}>{{university.name}}</a></td>
-				<td style="text-align:right; font-size:200%;">{{university.points}}</td>
+				<td style="text-align:right; font-size:200%;">{{university.points}} points</td>
 			</tr>
 
 		{%endfor%}

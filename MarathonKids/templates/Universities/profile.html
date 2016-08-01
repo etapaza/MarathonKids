@@ -1,25 +1,46 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<div class="text-center" style="padding-top:100px; padding-bottom:20px" >
-		<h1 class="img-center" style="font-size:300%;"><b>{{university.name}}</b></h1>
+	<div class="text-center" style="padding-top:20px; padding-bottom:20px" >
+		<h1 class="img-center" style="font-size:300%;"><img style="height:2em;" src="//logo.clearbit.com/{{university.username}}"> <span style="vertical-align:middle"><b>{{university.name}} - {{rank}}<sup>{{ord}}</sup></b></span></h1>
+	<hr>
 	</div>
 	<table class="tablepage" align="center" style="font-size:200%; padding-bottom:5px">
 		<tr>
 			<td>Kids:</td>
 			<td>{{university.kids_enrolled}}</td>
-			<!-- <td>Rank</td>
- -->		</tr>
+			<!-- <td>Rank</td> -->
+			{% if user == university %}
+			<td>
+				<form role="form" method="post" action="{% url 'university-update' %}">
+					{% csrf_token %}
+					<div class="input-group">
+						<input type="number" name="kids-value" min="0" value="0" class="form-control col-xs-2" style="text-align:center;width:5em">
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-success">Add</button>
+						</span>
+					</div>
+				</form>
+			</td>
+			{% endif %}
+		</tr>
 		<tr>
 			<td>Miles:</td>
 			<td>{{university.miles_ran}}</td>
 			<!-- <td>Rank</td> -->
+			{% if user == university %}
+			<td>
+				<form role="form" method="post" action="{% url 'university-update' %}">
+					{% csrf_token %}
+					<div class="input-group">
+						<input type="number" name="miles-value" min="0" value="0" class="form-control col-xs-2" style="text-align:center;width:5em">
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-success">Add</button>
+						</span>
+					</div>
+				</form>
+			</td>
+			{% endif %}
 		</tr>
 	</table>
-	<div class="text-center">
-		<a href={% url 'university-login' %}>Login to edit</a>
-	</div>
-	<div class="text-center" style="padding-top:5px;">
-		<a href={% url 'MarathonKids-home' %}>Home</a>
-	</div>
 {% endblock content %}
