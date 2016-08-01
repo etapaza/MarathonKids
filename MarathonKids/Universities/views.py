@@ -115,7 +115,9 @@ def update(request):
 	to_update = University.objects.get(id=request.user.id)
 	if request.POST.get('kids-value'):
 		to_update.kids_enrolled += int(request.POST['kids-value'])
-	else:
-		to_update.miles_ran += int(request.POST['miles-value'])
+	elif request.POST.get('money-value'):
+		to_update.money_raised += int(request.POST['money-value'])
+	elif request.POST.get('social-value'):
+		to_update.social_media += int(request.POST['social-value'])
 	to_update.save()
 	return profile(request, request.user.id)
