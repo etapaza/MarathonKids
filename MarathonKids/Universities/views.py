@@ -104,7 +104,8 @@ def login(request):
 	username = request.POST['username']
 	password = request.POST['password']
 	user = auth.authenticate(username=username, password=password)
-	auth.login(request, user)
+	if user is not None:
+		auth.login(request, user)
 	return redirect(request.META['HTTP_REFERER'])
 
 def logout(request):
