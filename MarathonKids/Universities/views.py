@@ -100,8 +100,6 @@ def create(request):
 	return redirect('MarathonKids-home')
 
 def login(request):
-	print('Received', request)
-	print('Received', request.POST)
 	username = request.POST['username']
 	password = request.POST['password']
 	user = auth.authenticate(username=username, password=password)
@@ -114,8 +112,6 @@ def logout(request):
 	return redirect(request.META['HTTP_REFERER'])
 
 def update(request):
-	print('Updating:', request.user)
-	print(request.POST)
 	to_update = University.objects.get(id=request.user.id)
 	if request.POST.get('kids-value'):
 		to_update.kids_enrolled += int(request.POST['kids-value'])
