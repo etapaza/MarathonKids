@@ -11,6 +11,6 @@ class Counter:
 # Create your models here.
 class University(AbstractUser):
 	name = models.CharField(max_length=100)
-	points = models.PositiveIntegerField()
+	money_raised = models.PositiveIntegerField(default=0)
 	kids_enrolled = models.PositiveIntegerField(default=0)
-	miles_ran = models.PositiveIntegerField(default=0)
+	social_media = models.PositiveIntegerField(default=0)
