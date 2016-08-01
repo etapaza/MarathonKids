@@ -6,7 +6,13 @@ from Universities.models import University, Counter
 def index(request):
 	print("trying to render")
 	
-	universities = University.objects.all().order_by("-points")
+	universities = University.objects.extra(
+		select={'points': 'kids_enrolled + money_raised + social_media'},
+		order_by=['-points',],
+	)
 	counter = Counter();
-	return render(request, 'MarathonKids\\index.html', {"universities":universities,"counter":counter, 'user': request.user})
-	
+	return render(request, 'MarathonKids\\index.html', {
+		'universities': universities,
+		'counter': counter,
+		'user': request.user
+	})
