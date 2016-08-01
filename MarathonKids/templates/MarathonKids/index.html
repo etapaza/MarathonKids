@@ -17,7 +17,7 @@
 				<td style="text-align:left; font-size:200%">{{counter.next}}</td>
 				<td><img height="50px" width="50px" src="https://logo.clearbit.com/{{university.username}}"></td>
 				<td style="text-align:left; font-size:200%"><a href={% url 'university-profile' university.id %}>{{university.name}}</a></td>
-				<td style="text-align:right; font-size:200%;">{{ university.kids_enrolled|add:university.social_media|add:university.money_raised }}</td>
+				<td style="text-align:right; font-size:200%;">{{ university.kids_enrolled|add:university.social_media|add:university.money_raised }} points</td>
 			</tr>
 
 		{%endfor%}

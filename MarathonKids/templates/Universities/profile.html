@@ -5,11 +5,11 @@
 		<h1 class="img-center" style="font-size:300%;"><img style="height:2em;" src="//logo.clearbit.com/{{university.username}}"> <span style="vertical-align:middle"><b>{{university.name}} - {{rank}}<sup>{{ord}}</sup></b></span></h1>
 	<hr>
 	</div>
-	<table class="tablepage" align="center" style="font-size:200%; padding-bottom:5px">
+	<table align="center" style="font-size:200%; padding-bottom:5px">
 		<tr>
-			<td>Kids:</td>
-			<td>{{university.kids_enrolled}}</td>
-			<!-- <td>Rank</td> -->
+			<td>Kids Enrolled:</td>
+			<td style="text-align:right">{{university.kids_enrolled}}</td>
+			<td>kids</td>
 			{% if user == university %}
 			<td>
 				<form role="form" method="post" action="{% url 'university-update' %}">
@@ -26,8 +26,8 @@
 		</tr>
 		<tr>
 			<td>Money Raised:</td>
-			<td>{{university.money_raised}}</td>
-			<!-- <td>Rank</td> -->
+			<td style="text-align:right">{{university.money_raised}}</td>
+			<td>dollars</td>
 			{% if user == university %}
 			<td>
 				<form role="form" method="post" action="{% url 'university-update' %}">
@@ -44,8 +44,8 @@
 		</tr>
 		<tr>
 			<td>Social Media:</td>
-			<td>{{university.social_media}}</td>
-			<!-- <td>Rank</td> -->
+			<td style="text-align:right">{{university.social_media}}</td>
+			<td>impressions</td>
 			{% if user == university %}
 			<td>
 				<form role="form" method="post" action="{% url 'university-update' %}">
