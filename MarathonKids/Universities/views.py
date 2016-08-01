@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.db.models import F
 from Universities.models import University
 from django.contrib import auth
 from datetime import datetime
@@ -11,7 +12,7 @@ def toOrdinalNum(n):
 # Create your views here.
 def profile(request, universityid):
 	university = University.objects.get(id=universityid)
-	rank = toOrdinalNum(University.objects.filter(points__gt = university.points).count() + 1)
+	rank = toOrdinalNum(list(University.order_by_points()).index(university) + 1)
 	return render(request, 'Universities\\profile.html', {'university': university, 'rank': rank[0:1], 'ord': rank[1:]})
 
 def create(request):
