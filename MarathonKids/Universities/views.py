@@ -120,4 +120,4 @@ def update(request):
 	elif request.POST.get('social-value'):
 		to_update.social_media += int(request.POST['social-value'])
 	to_update.save()
-	return profile(request, request.user.id)
+	return redirect('university-profile', request.user.id)
